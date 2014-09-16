@@ -3,7 +3,7 @@
 # Description: This script will unzip all files, including files in subdirectories.
 # Author: Xuan Ngo
 # Usage: 
-#	See command unzip commands
+#	See unzip commands
 #		runzip.sh <path>
 #	Commit by actually doing the unzip
 #		runzip.sh <path> commit
