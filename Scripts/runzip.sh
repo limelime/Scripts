@@ -30,7 +30,7 @@ green='\e[0;32m'
 no_color='\e[0m' # No Color
 
 
-# Unziping
+# Unzipping
 ###########################
 processed=0
 for filename in $(find ./ -type f | grep "\.zip")
