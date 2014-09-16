@@ -8,6 +8,8 @@
 #		md5files.sh
 #	Hash specific directory
 #		md5files.sh <directory>
+# Bugs:
+#	-Will not pick up hidden file(i.e. .filename)
 
 function recursive()
 {
