@@ -22,7 +22,6 @@ do
 		max_file_length=${#filename}
 	fi
 done
-full_cmd_length=$((max_file_length*2))
 
 # Color codes:
 ###########################
@@ -43,12 +42,12 @@ do
 		unzip -q -o "$filename" -d "$dir"
 		if [ "$?" -eq 0 ] # Get the status of previously executed command. Unzip must be before this line.
 		then
-			printf "[%3d][%-${max_file_length}s][${green}OK${no_color}]\n" "$processed" "$filename"
+			printf "[%3d][Unzipping %-${max_file_length}s][${green}OK${no_color}]\n" "$processed" "$filename"
 		else
-			printf "[%3d][%-${max_file_length}s][${red}NOK${no_color}]\n" "$processed" "$filename"
+			printf "[%3d][Unzipping %-${max_file_length}s][${red}NOK${no_color}]\n" "$processed" "$filename"
 	    fi
 	else
-		printf "[%-${full_cmd_length}s]\n" "unzip -o $filename -d $dir"
+		printf "[unzip -o %-${max_file_length}s -d %-${max_file_length}s]\n" "$filename" "$dir"
 	fi
 done
 
