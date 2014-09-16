@@ -33,8 +33,10 @@ no_color='\e[0m' # No Color
 # Unzipping
 ###########################
 processed=0
+counter=0
 for filename in $(find ./ -name "*.zip" -type f)
 do
+	counter=$((counter+1))
 	dir=$(dirname "$filename")
 	if [ "$2" = "commit" ]
 	then
@@ -47,7 +49,7 @@ do
 			printf "[%3d][Unzipping %-${max_file_length}s][${red}NOK${no_color}]\n" "$processed" "$filename"
 	    fi
 	else
-		printf "[unzip -o %-${max_file_length}s -d %-${max_file_length}s]\n" "$filename" "$dir"
+		printf "[%3d][unzip -o %-${max_file_length}s -d %-${max_file_length}s]\n" "$counter" "$filename" "$dir"
 	fi
 done
 
