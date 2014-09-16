@@ -12,7 +12,7 @@
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
 
-# Get max file length
+# Get max file path length
 ###########################
 max_file_length=0
 for filename in $(find ./ -type f | grep "\.zip")
@@ -23,7 +23,7 @@ do
 	fi
 done
 
-# Color codes:
+# Color codes
 ###########################
 red='\e[0;31m'
 green='\e[0;32m'
