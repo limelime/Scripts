@@ -4,7 +4,11 @@
 # YYYY-MM-DD HH:MM:SS | MD5 hash | Size in bytes | Filename
 # Author: Xuan Ngo
 # Usage:
-#	md5files.sh
+#	Hash current directory
+#		md5files.sh
+#	Hash specific directory
+#		md5files.sh <directory>
+
 function recursive()
 {
 	local sPath="$1"
