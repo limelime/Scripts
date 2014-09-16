@@ -33,7 +33,7 @@ no_color='\e[0m' # No Color
 # Unzipping
 ###########################
 processed=0
-for filename in $(find ./ -type f | grep "\.zip")
+for filename in $(find ./ -name "*.zip" -type f)
 do
 	dir=$(dirname "$filename")
 	if [ "$2" = "commit" ]
