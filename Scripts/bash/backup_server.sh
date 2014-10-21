@@ -3,6 +3,20 @@
 #########################################################
 # Author: Xuan Ngo
 # Description: Backup your mysql database and website.
+# Usage:
+#	sh backup_server.sh ${DOMAIN} ${WWW_ROOT} ${BACKUP_ROOT_PATH} ${MYSQL_HOST} ${MYSQL_USER} ${MYSQL_PWD} ${MYSQL_DBNAME}
+#		${DOMAIN}: Name of your website or name of your backup.
+#		${WWW_ROOT}: Location of your website.
+#		${BACKUP_ROOT_PATH}: Location to put your backup.
+#		${MYSQL_HOST}: MySQL host.
+#		${MYSQL_USER}: MySQL username.
+#		${MYSQL_PWD}: MySQL password.
+#		${MYSQL_DBNAME}: MySQL database name.
+#
+# Output:
+#	- Created Folder: ${BACKUP_ROOT_PATH}/${DOMAIN}_YYYY-MM-DD_HH.MM.SS
+#	- Website files: ${BACKUP_ROOT_PATH}/${DOMAIN}_YYYY-MM-DD_HH.MM.SS/${DOMAIN}_YYYY-MM-DD_HH.MM.SS.tar.bz2
+#	- Dump of database: ${BACKUP_ROOT_PATH}/${DOMAIN}_YYYY-MM-DD_HH.MM.SS/${DOMAIN}_YYYY-MM-DD_HH.MM.SS.sql.tar.bz2
 #########################################################
 DOMAIN_NAME=$1
 WWW_ROOT=$2
