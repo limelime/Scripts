@@ -14,9 +14,9 @@
 #		${MYSQL_DBNAME}: MySQL database name.
 #
 # Output:
-#	- Created Folder: ${BACKUP_ROOT_PATH}/${DOMAIN}_YYYY-MM-DD_HH.MM.SS
-#	- Website files: ${BACKUP_ROOT_PATH}/${DOMAIN}_YYYY-MM-DD_HH.MM.SS/${DOMAIN}_YYYY-MM-DD_HH.MM.SS.tar.bz2
-#	- Dump of database: ${BACKUP_ROOT_PATH}/${DOMAIN}_YYYY-MM-DD_HH.MM.SS/${DOMAIN}_YYYY-MM-DD_HH.MM.SS.sql.tar.bz2
+#	- Created Folder: ${BACKUP_ROOT_PATH}/${DOMAIN}_YYYY-MM-DD_HH.MM.SS/
+#	- Website files : ${BACKUP_ROOT_PATH}/${DOMAIN}_YYYY-MM-DD_HH.MM.SS/${DOMAIN}_YYYY-MM-DD_HH.MM.SS.tar.bz2
+#	- SQL database  : ${BACKUP_ROOT_PATH}/${DOMAIN}_YYYY-MM-DD_HH.MM.SS/${DOMAIN}_YYYY-MM-DD_HH.MM.SS.sql.tar.bz2
 #########################################################
 DOMAIN_NAME=$1
 WWW_ROOT=$2
