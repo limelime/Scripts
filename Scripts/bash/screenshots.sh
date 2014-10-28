@@ -2,7 +2,7 @@
 # Description: Automatically take 8 screenshots of a video using mplayer
 #              Screenshots are saved in 01.png, 02.png, ..., 08.png
 # Author: Xuan Ngo
-# Usage: ./thisScript.sh VideoFilename
+# Usage: ./screenshots.sh <videofilename>
 # Requirements: mplayer, grep, sed
  
 filename="$1"
