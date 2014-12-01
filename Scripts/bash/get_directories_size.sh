@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Description: Get the directories size up to 4 levels deep. Sort it by size in descending order.
 # Output: Output the resutls in directories_size_YYYY-MM-DD_HH.MM.SS.txt
 
