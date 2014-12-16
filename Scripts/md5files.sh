@@ -9,7 +9,7 @@
 #	Hash specific directory
 #		md5files.sh <directory>
 # Bugs:
-#	-Will not pick up hidden file(i.e. .filename)
+#	-Will not pick up hidden files(i.e. .filename)
 
 function recursive()
 {
