@@ -17,6 +17,6 @@ SET Unique=%Unique:Sat=%
 SET Unique=%Unique:Sun=%
  
 
-du --max-depth=4 --human-readable > dsize_%Unique%.txt
+du --max-depth=%1 --human-readable | %UnxUpdates%\sort.exe -g -r > dsize_%Unique%.txt
 
 SET Unique=&::
