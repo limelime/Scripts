@@ -8,7 +8,7 @@ IDLE_TIME=$((2*60*1000))
 
 # Sequence to execute when timeout triggers.
 trigger_cmd() {
-  echo "Move mouse: $(date)"
+  echo "Move mouse: $(date)" >> mousemove.log
   xte 'mousemove 80 80'
 }
 
