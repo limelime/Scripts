@@ -9,7 +9,8 @@ IDLE_TIME=$((2*60*1000))
 # Sequence to execute when timeout triggers.
 trigger_cmd() {
   echo "Move mouse: $(date)" >> mousemove.log
-  xte 'mousemove 80 80'
+  #xte 'mousemove 80 80'
+  xdotool mousemove --window 0 --sync 230 65 click --window 0 1
 }
 
 sleep_time=$IDLE_TIME
