@@ -18,8 +18,8 @@ triggered=false
 # ceil() instead of floor()
 while sleep $(((sleep_time+999)/1000)); do
     idle=$(xprintidle)
-    echo "$(date +'%Y-%m-%d_%0k.%M.%S') hello"
-    echo "idle=$idle  IDLE_TIME=$IDLE_TIME "
+#	echo "$(date +'%Y-%m-%d_%0k.%M.%S') hello"
+#	echo "idle=$idle  IDLE_TIME=$IDLE_TIME "
     if [ $idle -ge $IDLE_TIME ]; then
         if ! $triggered; then
             trigger_cmd
