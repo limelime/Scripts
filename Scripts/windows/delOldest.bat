@@ -1,6 +1,8 @@
 :: Description: Delete the oldest file of a given path.
 :: Author: Xuan Ngo
 :: Version: 1.0
+:: Usage:
+::  delOldest.bat c:\temp
 
 @ECHO OFF
 SET FOLDER_PATH=%1
