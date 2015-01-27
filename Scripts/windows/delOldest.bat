@@ -9,9 +9,9 @@ SET FOLDER_PATH=%1
 
 IF [%FOLDER_PATH%]==[] GOTO MISSING_ARGS
 
-FOR /F "delims=" %%W IN ('dir /s/b/a-d/od %FOLDER_PATH%\*.*') DO (
-del /q %%W
-echo Deleted %%W. 
+FOR /F "delims=" %%W IN ('dir /b/a-d/od %FOLDER_PATH%\*.*') DO (
+del /q %FOLDER_PATH%\%%W
+echo Deleted %FOLDER_PATH%\%%W. 
 EXIT /B 0
 )
  
