@@ -9,14 +9,17 @@ SET FOLDER_PATH=%1
 
 IF [%FOLDER_PATH%]==[] GOTO MISSING_ARGS
 
-FOR /F "delims=" %%W IN ('dir /s/b/a-d/od %FOLDER_PATH%\*.rar') DO (
+FOR /F "delims=" %%W IN ('dir /s/b/a-d/od %FOLDER_PATH%\*.*') DO (
 del /q %%W
+echo Deleted %%W. 
 EXIT /B 0
 )
  
 GOTO THE_END
 :MISSING_ARGS
-echo ERROR: FOLDER_PATH argument is missing! Supply FOLDER_PATH argument to the batch file.
+echo ERROR: Folder path argument is missing!
+echo Example: 
+echo         delOldest.bat c:\temp\
  
 :THE_END
 @REM The end. Do nothing. There should be no other statement.
