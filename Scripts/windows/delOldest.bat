@@ -9,7 +9,7 @@ SET FOLDER_PATH=%1
 
 IF [%FOLDER_PATH%]==[] GOTO MISSING_ARGS
 
-FOR /F "delims=" %%W IN ('dir /s/b/od %FOLDER_PATH%\*.rar') DO (
+FOR /F "delims=" %%W IN ('dir /s/b/a-d/od %FOLDER_PATH%\*.rar') DO (
 del /q %%W
 EXIT /B 0
 )
