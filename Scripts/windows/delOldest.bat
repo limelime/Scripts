@@ -3,6 +3,7 @@
 :: Version: 1.0
 :: Usage:
 ::  delOldest.bat c:\temp
+:: BUG: It will delete itself if it is the oldest file.
 
 @ECHO OFF
 SET FOLDER_PATH=%1
