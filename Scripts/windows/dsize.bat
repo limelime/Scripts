@@ -26,8 +26,8 @@ SET Unique=%Unique:Sat=%
 SET Unique=%Unique:Sun=%
  
 
-du --max-depth=%DIR_LEVEL% --human-readable | %UnxUpdates%\sort.exe -g -r > dsize_%Unique%.txt
+du --max-depth=%DIR_LEVEL% --human-readable | %UnxUpdates%\sort.exe -g -r > dsize_lvl%DIR_LEVEL%_%Unique%.txt
 
-echo Directory sizes(up to %DIR_LEVEL% level deep) are saved in dsize_%Unique%.txt.
+echo Directory sizes(up to %DIR_LEVEL% level deep) are saved in dsize_lvl%DIR_LEVEL%_%Unique%.txt.
 
 SET Unique=&::
