@@ -64,7 +64,7 @@ genisoimage  -r -V "cust-deb-iso" -cache-inodes -J -l -b isolinux/isolinux.bin -
 # Display info
 echo "***************** Done *****************"
 echo "Created ${OUTPUT_ISO} with ${PRESEED_FILE}."
-ls -al ${OUTPUT_ISO}
+
 
 # Install packages:
 # d-i pkgsel/include string ssh rsync initrd-tools cramfsprogs lzop
