@@ -33,3 +33,6 @@ cp -R * .??* ${TO_DIR}
 # Clean up mount process
 #umount ${TMP_LOOP_DIR}
 #rm -rf ${TMP_LOOP_DIR}
+
+# Display info
+echo "All files of ${ISO_FILE_PATH} are copied into ${TO_DIR}."
