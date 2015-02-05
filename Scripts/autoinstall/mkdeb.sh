@@ -1,6 +1,7 @@
 #!/bin/sh
 # Description: Create custom auto install Debian ISO
 # Author: Xuan Ngo
+# Usage: mkdeb.sh <Image folder path> <Preseed file path>
 # Reference: 
 #	-https://wiki.debian.org/DebianInstaller/Preseed/EditIso
 #	-https://codeghar.wordpress.com/2011/12/14/automated-customized-debian-installation-using-preseed/
@@ -12,12 +13,10 @@
 
 
 # Manual input variables
-ISO_BASE_DIR=/media/apps/iso/debnetinst
-#PRESEED_FILE=preseed/cust-deb-preseed.cfg
-PRESEED_FILE=preseed/test-preseed.cfg
-
+ISO_BASE_DIR=$1
+PRESEED_FILE=$2
 DATE_STRING=`date +"%Y-%m-%d_%0k.%M.%S"`
-OUTPUT_ISO=/media/sf_vm_sharedfolder/cust-deb-${DATE_STRING}.iso
+OUTPUT_ISO=$3/cust-deb-${DATE_STRING}.iso
 
 
 INITRD_PATH=${ISO_BASE_DIR}/install.386/initrd.gz
@@ -37,7 +36,10 @@ gzip -d < ${INITRD_PATH} | cpio --extract --verbose --make-directories --no-abso
 cp ${PRESEED_FILE} preseed.cfg
 
 # Backup the original initrd.gz.
-cp ${INITRD_PATH} ${INITRD_PATH}.bck
+if [ ! -f ${INITRD_PATH}.bck ]; then
+	cp ${INITRD_PATH} ${INITRD_PATH}.bck
+fi
+
 
 # Repackage initrd.gz and overwrite the original initrd.gz.
 find . | cpio -H newc --create --verbose | gzip -9 > ${INITRD_PATH}
@@ -60,6 +62,7 @@ genisoimage  -r -V "cust-deb-iso" -cache-inodes -J -l -b isolinux/isolinux.bin -
 
 
 # Display info
+echo "***************** Done *****************"
 echo "Created ${OUTPUT_ISO} with ${PRESEED_FILE}."
 ls -al ${OUTPUT_ISO}
 
