@@ -3,3 +3,6 @@ auto-install/enabled=true) -- that allows the keyboard and locale
 questions to be delayed, such that they can be preseeded by file, rather
 than on the kernel command line.
 https://lists.debian.org/debian-boot/2012/01/msg00023.html
+
+
+append  preseed/file=/cdrom/custom.seed debian-installer/locale=en_US console-setup/layoutcode=us initrd=/install.386/initrd.gz quiet --

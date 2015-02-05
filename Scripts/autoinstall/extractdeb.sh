@@ -19,8 +19,10 @@ TMP_LOOP_DIR=/tmp/tmploopiso
 mkdir ${TMP_LOOP_DIR}
 mount -o loop ${ISO_FILE_PATH} ${TMP_LOOP_DIR}
 
-# Clear ${TO_DIR} before copying 
-chmod -R 777 ${TO_DIR}
+# Clear ${TO_DIR} before copying
+if [ -f ${TO_DIR} ]; then
+	chmod -R 777 ${TO_DIR}
+fi
 rm -rf ${TO_DIR}
 mkdir -p ${TO_DIR}
 
