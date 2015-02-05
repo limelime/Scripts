@@ -35,4 +35,5 @@ cp -R * .??* ${TO_DIR}
 #rm -rf ${TMP_LOOP_DIR}
 
 # Display info
+echo "***************** Done *****************"
 echo "All files of ${ISO_FILE_PATH} are copied into ${TO_DIR}."
