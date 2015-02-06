@@ -1,7 +1,7 @@
 #!/bin/sh
 # Description: Extract Debian ISO
 # Author: Xuan Ngo
-# Usage: extractdeb.sh <ISO file> <to directory>
+# Usage: extract-deb-iso.sh <ISO file> <to directory>
 # Reference: 
 #	-https://wiki.debian.org/DebianInstaller/Preseed/EditIso
 #	-https://codeghar.wordpress.com/2011/12/14/automated-customized-debian-installation-using-preseed/

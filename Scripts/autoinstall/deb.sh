@@ -16,6 +16,5 @@ OUTPUT_ISO_DIR=/media/sf_vm_sharedfolder
 cp -R preseed/post-install/ ${MOD_ISO_DIR}
 
 
-
 YOUR_ISOLINUX_CFG=preseed/isolinux.cfg
 ./mk-deb-iso.sh ${MOD_ISO_DIR} ${PRESEED_FILE_PATH} ${OUTPUT_ISO_DIR} ${YOUR_ISOLINUX_CFG}
