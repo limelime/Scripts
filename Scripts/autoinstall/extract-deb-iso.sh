@@ -1,7 +1,7 @@
 #!/bin/sh
 # Description: Extract Debian ISO
 # Author: Xuan Ngo
-# Usage: extract-deb-iso.sh <ISO file> <to directory>
+# Usage: extractdeb.sh <ISO file> <to directory>
 # Reference: 
 #	-https://wiki.debian.org/DebianInstaller/Preseed/EditIso
 #	-https://codeghar.wordpress.com/2011/12/14/automated-customized-debian-installation-using-preseed/
@@ -15,9 +15,9 @@ ISO_FILE_PATH=$1
 TO_DIR=$2
 
 # Mount ISO
-ISO_MOUNT_PATH=/tmp/tmploopiso
-mkdir ${ISO_MOUNT_PATH}
-mount -o loop ${ISO_FILE_PATH} ${ISO_MOUNT_PATH}
+TMP_LOOP_DIR=/tmp/tmploopiso
+mkdir ${TMP_LOOP_DIR}
+mount -o loop ${ISO_FILE_PATH} ${TMP_LOOP_DIR}
 
 # Clear ${TO_DIR} before copying
 if [ -f ${TO_DIR} ]; then
@@ -27,15 +27,15 @@ rm -rf ${TO_DIR}
 mkdir -p ${TO_DIR}
 
 # Copy all files to ${TO_DIR}
-cd ${ISO_MOUNT_PATH}
+cd ${TMP_LOOP_DIR}
 cp -R * .??* ${TO_DIR}
 # cp: cannot create symbolic link ‘/media/sf_vm_sharedfolder/moddebdir/doc/FAQ/html/ch-uptodate.html’: Read-only file system
 # bsdtar -C cd -xf your-image.iso 
 # https://wiki.debian.org/DebianInstaller/Modify/CD#Debian-Installer:_How_to_modify_an_existing_CD_image
 
 # Clean up mount process
-#umount ${ISO_MOUNT_PATH}
-#rm -rf ${ISO_MOUNT_PATH}
+#umount ${TMP_LOOP_DIR}
+#rm -rf ${TMP_LOOP_DIR}
 
 # Display info
 echo "***************** Done *****************"
