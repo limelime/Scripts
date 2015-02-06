@@ -1,7 +1,7 @@
 #!/bin/sh
 # Description: Create custom auto install Debian ISO
 # Author: Xuan Ngo
-# Usage: mkdeb.sh <Image folder path> <Preseed file path> <isolinux.cfg path>
+# Usage: mk-deb-iso.sh <Image folder path> <Preseed file path> <isolinux.cfg path>
 # Reference: 
 #	-https://wiki.debian.org/DebianInstaller/Preseed/EditIso
 #	-https://codeghar.wordpress.com/2011/12/14/automated-customized-debian-installation-using-preseed/

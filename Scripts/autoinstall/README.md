@@ -4,4 +4,5 @@ Autoinstall-min is the strict minimum script to create an ISO for an unattended 
 
 Usage
 =====
-Adjust deb.sh to match your paths. 
+Adjust deb.sh to match your paths.
+On CD boot, select "Custom Installation".
