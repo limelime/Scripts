@@ -8,4 +8,4 @@ echo "GRUB_GFXPAYLOAD_LINUX=keep" >> /etc/default/grub
 update-grub
 
 ### Add .bashrc
-cp /cdrom/post-install/bashrc_root /root/.bashrc
+cp /root/post-install/bashrc_root /root/.bashrc
