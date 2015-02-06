@@ -15,9 +15,9 @@ ISO_FILE_PATH=$1
 TO_DIR=$2
 
 # Mount ISO
-TMP_LOOP_DIR=/tmp/tmploopiso
-mkdir ${TMP_LOOP_DIR}
-mount -o loop ${ISO_FILE_PATH} ${TMP_LOOP_DIR}
+ISO_MOUNT_PATH=/tmp/tmploopiso
+mkdir ${ISO_MOUNT_PATH}
+mount -o loop ${ISO_FILE_PATH} ${ISO_MOUNT_PATH}
 
 # Clear ${TO_DIR} before copying
 if [ -f ${TO_DIR} ]; then
@@ -27,15 +27,15 @@ rm -rf ${TO_DIR}
 mkdir -p ${TO_DIR}
 
 # Copy all files to ${TO_DIR}
-cd ${TMP_LOOP_DIR}
+cd ${ISO_MOUNT_PATH}
 cp -R * .??* ${TO_DIR}
 # cp: cannot create symbolic link ‘/media/sf_vm_sharedfolder/moddebdir/doc/FAQ/html/ch-uptodate.html’: Read-only file system
 # bsdtar -C cd -xf your-image.iso 
 # https://wiki.debian.org/DebianInstaller/Modify/CD#Debian-Installer:_How_to_modify_an_existing_CD_image
 
 # Clean up mount process
-#umount ${TMP_LOOP_DIR}
-#rm -rf ${TMP_LOOP_DIR}
+#umount ${ISO_MOUNT_PATH}
+#rm -rf ${ISO_MOUNT_PATH}
 
 # Display info
 echo "***************** Done *****************"
