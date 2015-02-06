@@ -1,1 +1,0 @@
-echo "done" > /root/xuan_done.txt
