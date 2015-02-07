@@ -1,6 +1,6 @@
 Autoinstall-min
 ===============
-Autoinstall is a set of bare minimum scripts to create an ISO for an unattended installation of Debian.
+Autoinstall-min is a set of bare minimum scripts to create an ISO for an unattended installation of Debian.
 
 Usage
 =====
