@@ -1,3 +1,7 @@
+Warning
+=======
+These scripts will delete all your data.
+
 Autoinstall-min
 ===============
 Autoinstall-min is a set of bare minimum scripts to create an ISO for an unattended installation of Debian.
