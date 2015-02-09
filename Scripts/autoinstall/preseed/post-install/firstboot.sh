@@ -26,3 +26,7 @@ aptitude -y update
 # These packages are need to install VirtualBox Guest Additions.
 aptitude -y install bzip2
 aptitude -y install dkms build-essential linux-headers-$(uname -r)
+
+### Is it really running once?
+DATE_STRING=`date +"%Y-%m-%d_%0k.%M.%S"`
+echo "firstboot.sh ran on ${DATE_STRING}." >> ${POST_INSTALL_DIR}/firstboot.log
