@@ -12,8 +12,16 @@ update-grub
 ### Add .bashrc.
 cp ${POST_INSTALL_DIR}/bashrc_root /root/.bashrc
 
+
+### Preload *.deb: Copy *.deb to /var/cache/apt/archives
+cp -R ${POST_INSTALL_DIR}/apt.386/archives/* /var/cache/apt/archives 
+
 ### Modify sources.list
 # Disable the cdrom path from the apt sources.list automatically.
 sed -i 's/^deb cdrom/#deb/' /etc/apt/sources.list
 cat ${POST_INSTALL_DIR}/add-sources.list >> /etc/apt/sources.list
 aptitude -y update
+
+### Install other packages
+aptitude -y install bzip2
+aptitude -y install dkms build-essential linux-headers-$(uname -r)
