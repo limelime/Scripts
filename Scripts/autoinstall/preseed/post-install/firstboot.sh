@@ -30,3 +30,9 @@ aptitude -y install dkms build-essential linux-headers-$(uname -r)
 ### Is it really running once?
 DATE_STRING=`date +"%Y-%m-%d_%0k.%M.%S"`
 echo "firstboot.sh ran on ${DATE_STRING}." >> ${POST_INSTALL_DIR}/firstboot.log
+
+### Remove our firstboot service so that it won't run again
+update-rc.d firstboot remove
+
+### Reboot into the new kernel
+/sbin/reboot
