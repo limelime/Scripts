@@ -23,5 +23,6 @@ cat ${POST_INSTALL_DIR}/add-sources.list >> /etc/apt/sources.list
 aptitude -y update
 
 ### Install other packages
+# These packages are need to install VirtualBox Guest Additions.
 aptitude -y install bzip2
 aptitude -y install dkms build-essential linux-headers-$(uname -r)
