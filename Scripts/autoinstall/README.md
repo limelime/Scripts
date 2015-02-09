@@ -19,4 +19,6 @@ Features
 * Username/Password = debian/debian
 * Install base system
 * Increase console resolution to 1024x768.
-* Replace `/root/.bashrc`
+* Replace `/root/.bashrc`.
+* Preload *.deb packages. Copy all your *.deb package to `./preseed/post-install/apt.386/archives/`.
+
