@@ -2,14 +2,17 @@
 # Description: This script will run after the installation from the ISO is completed.
 # Author: Xuan Ngo
 
+POST_INSTALL_DIR=/root/post-install
+
 ### Change console resolution.
 echo "GRUB_GFXMODE=1024x768x32" >> /etc/default/grub
 echo "GRUB_GFXPAYLOAD_LINUX=keep" >> /etc/default/grub
 update-grub
 
 ### Add .bashrc.
-cp /root/post-install/bashrc_root /root/.bashrc
+cp ${POST_INSTALL_DIR}/bashrc_root /root/.bashrc
 
-### Replace sources.list
+### Modify sources.list
 # Disable the cdrom path from the apt sources.list automatically.
 sed -i 's/^deb cdrom/#deb/' /etc/apt/sources.list
+cat ${POST_INSTALL_DIR}/add-sources.list >> /etc/apt/sources.list
