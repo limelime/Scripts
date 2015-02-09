@@ -1,30 +1,30 @@
 #!/bin/sh
-# Description: This script will run after the installation from the ISO is completed.
+# Description: Create a service that will run firstboot.sh script once and on the first boot.
+#				Put all your commands in firstboot.sh and not here because this script is
+#				still run  under the installer and the installer’s post-install environment is pretty limiting. 
 # Author: Xuan Ngo
+# Reference: http://www.50ply.com/blog/2012/07/16/automating-debian-installs-with-preseed-and-puppet/
+#			 https://wiki.debian.org/LSBInitScripts
 
 POST_INSTALL_DIR=/root/post-install
 
-### Change console resolution.
-echo "GRUB_GFXMODE=1024x768x32" >> /etc/default/grub
-echo "GRUB_GFXPAYLOAD_LINUX=keep" >> /etc/default/grub
-update-grub
+# Create a service that will run our firstboot.sh script
+cat > /etc/init.d/firstboot <<EOF
+### BEGIN INIT INFO
+# Provides:        firstboot
+# Required-Start:  $networking
+# Required-Stop:   $networking
+# Default-Start:   2 3 4 5
+# Default-Stop:    0 1 6
+# Short-Description: A script that runs once
+# Description: A script that runs once
+### END INIT INFO
 
-### Add .bashrc.
-cp ${POST_INSTALL_DIR}/bashrc_root /root/.bashrc
+cd /${POST_INSTALL_DIR} ; /usr/bin/nohup sh -x /${POST_INSTALL_DIR}/firstboot.sh &
 
 
-### Preload *.deb: Copy *.deb to /var/cache/apt/archives
-DEB_CACHE_DIR=/var/cache/apt/archives/
-mkdir -p ${DEB_CACHE_DIR}
-yes | cp -Rf ${POST_INSTALL_DIR}/apt.386/archives/* ${DEB_CACHE_DIR} 
+EOF
 
-### Modify sources.list
-# Disable the cdrom path from the apt sources.list automatically.
-sed -i 's/^deb cdrom/#deb/' /etc/apt/sources.list
-cat ${POST_INSTALL_DIR}/add-sources.list >> /etc/apt/sources.list
-aptitude -y update
-
-### Install other packages
-# These packages are need to install VirtualBox Guest Additions.
-aptitude -y install bzip2
-aptitude -y install dkms build-essential linux-headers-$(uname -r)
+# Install the firstboot service
+chmod +x /etc/init.d/firstboot
+update-rc.d firstboot defaults
