@@ -13,5 +13,5 @@ Features
 * Username/Password = root/debian
 * Username/Password = debian/debian
 * Install base system
-* Increase console resolution
+* Increase console resolution to 1024x768.
 * Replace `/root/.bashrc`
