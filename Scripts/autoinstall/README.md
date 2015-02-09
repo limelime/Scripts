@@ -1,8 +1,3 @@
-Warning
-=======
-These scripts will delete all your data.
-
-
 Autoinstall
 ===========
 * Autoinstall is a set of scripts to create an ISO for an unattended installation of Debian.
@@ -11,7 +6,7 @@ Autoinstall
 Usage
 =====
 * In order to create the ISO, adjust `deb.sh` to match your paths and run it.
-* On CD boot, select **Custom Installation**.
+* On CD boot, select **Custom Installation**. **Warning**: It will delete all data of your hard drive.
 
 Features
 ========
