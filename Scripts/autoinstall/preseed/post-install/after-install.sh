@@ -16,3 +16,4 @@ cp ${POST_INSTALL_DIR}/bashrc_root /root/.bashrc
 # Disable the cdrom path from the apt sources.list automatically.
 sed -i 's/^deb cdrom/#deb/' /etc/apt/sources.list
 cat ${POST_INSTALL_DIR}/add-sources.list >> /etc/apt/sources.list
+aptitude -y update
