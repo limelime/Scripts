@@ -14,7 +14,7 @@ cp ${POST_INSTALL_DIR}/bashrc_root /root/.bashrc
 
 
 ### Preload *.deb: Copy *.deb to /var/cache/apt/archives
-cp -Rf ${POST_INSTALL_DIR}/apt.386/archives/* /var/cache/apt/archives 
+yes | cp -Rf ${POST_INSTALL_DIR}/apt.386/archives/* /var/cache/apt/archives/ 
 
 ### Modify sources.list
 # Disable the cdrom path from the apt sources.list automatically.
