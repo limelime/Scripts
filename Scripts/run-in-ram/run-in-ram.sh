@@ -13,36 +13,35 @@ if [ -z "$BASE_RAM_DIR" ] ; then
 fi
 
 
+
+### fstab 
 FSTAB_FILE=/etc/fstab
-if [ ! -f ${FSTAB_FILE}.bck ]; then
-
-  ### fstab 
   # Backup /etc/fstab
-  cp ${FSTAB_FILE} ${FSTAB_FILE}.bck
-  
-  # Replace root(/) line with 'none / tmpfs defaults 0 0'
-  sed -i "s/\(.* \/ .*\)/#\1\nnone \/ tmpfs defaults 0 0/" ${FSTAB_FILE}
+  cp -n ${FSTAB_FILE} ${FSTAB_FILE}.bck
 
-  ### local
-	INITRAMFS_SCRIPT_DIR=/usr/share/initramfs-tools/scripts
-	LOCAL_FILE=${INITRAMFS_SCRIPT_DIR}/local
-  
+  # Replace root(/) line with 'none / tmpfs defaults 0 0'
+  sed -i "s/\(^\/.* \/ .*\)/#\1\nnone \/ tmpfs defaults 0 0/" ${FSTAB_FILE}
+
+### local
+INITRAMFS_SCRIPT_DIR=/usr/share/initramfs-tools/scripts
+LOCAL_FILE=${INITRAMFS_SCRIPT_DIR}/local
+
   # Backup local
-	cp ${LOCAL_FILE} ${LOCAL_FILE}.bck
+  cp -n ${LOCAL_FILE} ${LOCAL_FILE}.bck
 
   # Override local
-	cp ${BASE_RAM_DIR}/local.ram ${LOCAL_FILE}
+  cp ${BASE_RAM_DIR}/local.ram ${LOCAL_FILE}
 
   # Rebuild initramfs
-	cd ${INITRAMFS_SCRIPT_DIR}
-	mkinitramfs -o /boot/initrd.img-ramboot
+  cd ${INITRAMFS_SCRIPT_DIR}
+  mkinitramfs -o /boot/initrd.img-ramboot
 
   # Put back the original local
-	cp ${LOCAL_FILE}.bck ${LOCAL_FILE}
-	
-  # Add a new boot entry in /boot/grub/grub.cfg
-	cp ${BASE_RAM_DIR}/grub.cfg.ram /boot/grub/grub.cfg
+  yes|cp ${LOCAL_FILE}.bck ${LOCAL_FILE}
 
-fi
+  # Add a new boot entry in /boot/grub/grub.cfg
+  cp ${BASE_RAM_DIR}/grub.cfg.ram /boot/grub/grub.cfg
+
+
 
 
