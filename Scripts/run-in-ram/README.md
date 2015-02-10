@@ -1,6 +1,10 @@
 Run-in-RAM
 ==========
-Script to make Debian run in memory.
+Script to make your Debian system run in memory.
+
+Usage
+=====
+On boot, select the RAM boot entry.
 
 References
 ==========

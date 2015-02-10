@@ -1,6 +1,9 @@
 #!/bin/sh
-# Description: 
+# Description: Script to make your Debian system run in memory.
 # Author: Xuan Ngo
+# Usage: On boot, select the RAM boot entry.
+# Reference:
+# -http://reboot.pro/topic/14547-linux-load-your-root-partition-to-ram-and-boot-it/
 
 ### Get the path location of the executing script
 ## http://stackoverflow.com/questions/630372/determine-the-path-of-the-executing-bash-script
