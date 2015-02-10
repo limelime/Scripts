@@ -26,7 +26,7 @@ FSTAB_FILE=/etc/fstab
   cp -n ${FSTAB_FILE} ${FSTAB_FILE}.bck
 
   # Replace root(/) line with 'none / tmpfs defaults 0 0'
-  sed -i "s/\(^\/.* \/ .*\)/#\1\nnone \/ tmpfs defaults 0 0/" ${FSTAB_FILE}
+  sed -i "/^#/b; s/\(^.* \/ .*\)/#\1\nnone \/ tmpfs defaults 0 0/" ${FSTAB_FILE}
 
 ### local
 INITRAMFS_SCRIPT_DIR=/usr/share/initramfs-tools/scripts
