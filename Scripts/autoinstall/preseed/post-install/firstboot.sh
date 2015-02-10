@@ -3,6 +3,9 @@
 
 POST_INSTALL_DIR=/root/post-install
 
+### Remove our firstboot service so that it won't run again.
+update-rc.d firstboot remove
+
 ### Change console resolution.
 echo "GRUB_GFXMODE=1024x768x32" >> /etc/default/grub
 echo "GRUB_GFXPAYLOAD_LINUX=keep" >> /etc/default/grub
@@ -12,7 +15,7 @@ update-grub
 cp ${POST_INSTALL_DIR}/bashrc_root /root/.bashrc
 
 
-### Preload *.deb: Copy *.deb to /var/cache/apt/archives
+### Preload *.deb: Copy *.deb to /var/cache/apt/archives.
 DEB_CACHE_DIR=/var/cache/apt/archives/
 cp -Rf ${POST_INSTALL_DIR}/apt.386/archives/* ${DEB_CACHE_DIR} 
 
@@ -31,8 +34,7 @@ aptitude -y install dkms build-essential linux-headers-$(uname -r)
 DATE_STRING=`date +"%Y-%m-%d_%0k.%M.%S"`
 echo "firstboot.sh ran on ${DATE_STRING}." >> ${POST_INSTALL_DIR}/firstboot.log
 
-### Remove our firstboot service so that it won't run again
-update-rc.d firstboot remove
+
 
 ### Reboot into the new kernel
 /sbin/reboot
