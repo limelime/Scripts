@@ -2,9 +2,6 @@
 # Description: Script to make your Debian system run in memory.
 # Author: Xuan Ngo
 # Usage: On boot, select the RAM boot entry.
-# Tested on:
-#   -Debian-7.8.0-i386
-#
 # Reference:
 #   -http://reboot.pro/topic/14547-linux-load-your-root-partition-to-ram-and-boot-it/
 
