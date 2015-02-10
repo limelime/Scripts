@@ -2,11 +2,18 @@
 # Description: Script to make your Debian system run in memory.
 # Author: Xuan Ngo
 # Usage: On boot, select the RAM boot entry.
-# Tested on:
-#   -Debian-7.8.0-i386
-#
+#       run-in-ram.sh <version>
 # Reference:
 #   -http://reboot.pro/topic/14547-linux-load-your-root-partition-to-ram-and-boot-it/
+
+### VERSION
+VERSION=$1
+if [ $# -eq 0 ]; then
+  echo "No version supplied."
+  echo "Available versions are:"
+  echo "\t debian-7.x"
+  exit 1;
+fi
 
 ### Get the path location of the executing script
 ## http://stackoverflow.com/questions/630372/determine-the-path-of-the-executing-bash-script
@@ -18,7 +25,7 @@ if [ -z "$BASE_RAM_DIR" ] ; then
   exit 1  # fail
 fi
 
-
+PRE_MADE_DIR=${BASE_RAM_DIR}/pre-made-files
 
 ### fstab 
 FSTAB_FILE=/etc/fstab
@@ -36,7 +43,7 @@ LOCAL_FILE=${INITRAMFS_SCRIPT_DIR}/local
   cp -n ${LOCAL_FILE} ${LOCAL_FILE}.bck
 
   # Override local
-  cp ${BASE_RAM_DIR}/local.ram ${LOCAL_FILE}
+  cp ${PRE_MADE_DIR}/local.ram-${VERSION} ${LOCAL_FILE}
 
   # Rebuild initramfs
   cd ${INITRAMFS_SCRIPT_DIR}
@@ -46,7 +53,9 @@ LOCAL_FILE=${INITRAMFS_SCRIPT_DIR}/local
   yes|cp ${LOCAL_FILE}.bck ${LOCAL_FILE}
 
   # Add a new boot entry(RAM) in /boot/grub/grub.cfg
-  cp ${BASE_RAM_DIR}/grub.cfg.ram /boot/grub/grub.cfg
+  GRUB_FILE=/boot/grub/grub.cfg
+  cp ${GRUB_FILE} ${GRUB_FILE}.bck
+  cp ${PRE_MADE_DIR}/grub.cfg.ram-${VERSION} ${GRUB_FILE}
 
 
 
