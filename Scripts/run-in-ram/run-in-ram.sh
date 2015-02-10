@@ -6,6 +6,7 @@
 # Reference:
 #   -http://reboot.pro/topic/14547-linux-load-your-root-partition-to-ram-and-boot-it/
 
+
 ### VERSION
 VERSION=$1
 if [ $# -eq 0 ]; then
