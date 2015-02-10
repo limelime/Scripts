@@ -2,7 +2,7 @@
 # Description: 
 # Author: Xuan Ngo
 
-# Get the path location of the executing script
+### Get the path location of the executing script
 ## http://stackoverflow.com/questions/630372/determine-the-path-of-the-executing-bash-script
 BASE_RAM_DIR="`dirname \"$0\"`"                    # relative
 BASE_RAM_DIR="`( cd \"$BASE_RAM_DIR\" && pwd )`"  # absolutized and normalized
