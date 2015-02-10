@@ -13,6 +13,7 @@ if [ $# -eq 0 ]; then
   echo "No version supplied."
   echo "Available versions are:"
   echo "\t debian-7.x"
+  echo "\t mint-201403"
   exit 1;
 fi
 
