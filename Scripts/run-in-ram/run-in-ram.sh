@@ -39,7 +39,7 @@ LOCAL_FILE=${INITRAMFS_SCRIPT_DIR}/local
   # Put back the original local
   yes|cp ${LOCAL_FILE}.bck ${LOCAL_FILE}
 
-  # Add a new boot entry in /boot/grub/grub.cfg
+  # Add a new boot entry(RAM) in /boot/grub/grub.cfg
   cp ${BASE_RAM_DIR}/grub.cfg.ram /boot/grub/grub.cfg
 
 
