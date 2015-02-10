@@ -53,9 +53,12 @@ LOCAL_FILE=${INITRAMFS_SCRIPT_DIR}/local
   # Put back the original local
   yes|cp ${LOCAL_FILE}.bck ${LOCAL_FILE}
 
+### grub.cfg
+GRUB_FILE=/boot/grub/grub.cfg
+  # Backup grub.cfg
+  cp -n ${GRUB_FILE} ${GRUB_FILE}.bck
+  
   # Add a new boot entry(RAM) in /boot/grub/grub.cfg
-  GRUB_FILE=/boot/grub/grub.cfg
-  cp ${GRUB_FILE} ${GRUB_FILE}.bck
   cp ${PRE_MADE_DIR}/grub.cfg.ram-${VERSION} ${GRUB_FILE}
 
 
