@@ -95,7 +95,8 @@ menuentry 'LinuxMint GNU/Linux, 3.11-2-486 RAM' --class linuxmint --class gnu-li
 	set root='(hd0,msdos2)'
 	search --no-floppy --fs-uuid --set=root ea03d70a-a36b-4a25-9aef-787e9d39f799
 	echo	'Loading Linux 3.11-2-486 ...'
-	linux	/boot/vmlinuz-3.11-2-486 root=UUID=ea03d70a-a36b-4a25-9aef-787e9d39f799 ro  quiet splash
+#	linux	/boot/vmlinuz-3.11-2-486 root=UUID=ea03d70a-a36b-4a25-9aef-787e9d39f799 ro  quiet splash
+	linux	/boot/vmlinuz-3.11-2-486 root=/dev/mapper/auto--install-root ro  quiet splash
 	echo	'Loading initial ramdisk ...'
 	initrd /initrd.img-ramboot
 }
