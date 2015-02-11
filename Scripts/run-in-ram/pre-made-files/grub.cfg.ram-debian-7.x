@@ -59,19 +59,6 @@ set menu_color_highlight=white/blue
 ### END /etc/grub.d/05_debian_theme ###
 
 ### BEGIN /etc/grub.d/10_linux ###
-menuentry 'Debian GNU/Linux 3.2.0-4-686-pae in RAM' --class debian --class gnu-linux --class gnu --class os {
-	load_video
-	set gfxpayload=keep
-	insmod gzio
-	insmod part_msdos
-	insmod ext2
-	set root='(hd0,msdos1)'
-	search --no-floppy --fs-uuid --set=root 2c4d2368-1ba1-49ac-91dc-4ccdf49cdd87
-	echo	'Loading Linux 3.2.0-4-686-pae ...'
-	linux	/vmlinuz-3.2.0-4-686-pae root=/dev/mapper/auto--install-root ro  quiet
-	echo	'Loading initial ramdisk ...'
-	initrd /initrd.img-ramboot
-}
 menuentry 'Debian GNU/Linux, with Linux 3.2.0-4-686-pae' --class debian --class gnu-linux --class gnu --class os {
 	load_video
 	set gfxpayload=keep
@@ -97,6 +84,19 @@ menuentry 'Debian GNU/Linux, with Linux 3.2.0-4-686-pae (recovery mode)' --class
 	linux	/vmlinuz-3.2.0-4-686-pae root=/dev/mapper/auto--install-root ro single 
 	echo	'Loading initial ramdisk ...'
 	initrd	/initrd.img-3.2.0-4-686-pae
+}
+menuentry 'Debian GNU/Linux 3.2.0-4-686-pae in RAM' --class debian --class gnu-linux --class gnu --class os {
+	load_video
+	set gfxpayload=keep
+	insmod gzio
+	insmod part_msdos
+	insmod ext2
+	set root='(hd0,msdos1)'
+	search --no-floppy --fs-uuid --set=root 2c4d2368-1ba1-49ac-91dc-4ccdf49cdd87
+	echo	'Loading Linux 3.2.0-4-686-pae ...'
+	linux	/vmlinuz-3.2.0-4-686-pae root=/dev/mapper/auto--install-root ro  quiet
+	echo	'Loading initial ramdisk ...'
+	initrd /initrd.img-ramboot
 }
 ### END /etc/grub.d/10_linux ###
 
