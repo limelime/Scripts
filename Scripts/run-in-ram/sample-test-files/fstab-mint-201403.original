@@ -1,0 +1,11 @@
+# /etc/fstab: static file system information.
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+
+proc	/proc	proc	defaults	0	0
+#Entry for /dev/sda2 :
+UUID=ea03d70a-a36b-4a25-9aef-787e9d39f799	/	ext4	rw,errors=remount-ro	0	1
+#Entry for /dev/sda1 :
+UUID=5d9a5e43-d827-40dd-a7ea-f1baa392493c	swap	swap	sw	0	0
+
+
