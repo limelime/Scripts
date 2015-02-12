@@ -1,8 +1,0 @@
-
-##################################################
-# Links took from http://debgen.simplylinux.ch/
-
-deb http://ftp.ca.debian.org/debian stable main contrib non-free
-
-deb http://security.debian.org/ wheezy/updates main contrib non-free
-
