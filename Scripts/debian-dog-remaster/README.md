@@ -1,6 +1,13 @@
-Changes
-=======
+Generic changes
+================
 * apt-get -y install default-jdk
+* Add custom .bashrc
+
+Specific changes
+=================
+* Add proxy information in Firefox.
+* Add proxy information in /etc/apt/apt.conf.
+
 
 
 
