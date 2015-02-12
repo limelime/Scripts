@@ -28,7 +28,7 @@ mkdir -p ${TO_DIR}
 
 # Copy all files to ${TO_DIR}
 cd ${TMP_LOOP_DIR}
-cp -R * .??* ${TO_DIR}
+cp -R * ${TO_DIR}
 # cp: cannot create symbolic link ‘/media/sf_vm_sharedfolder/moddebdir/doc/FAQ/html/ch-uptodate.html’: Read-only file system
 # bsdtar -C cd -xf your-image.iso 
 # https://wiki.debian.org/DebianInstaller/Modify/CD#Debian-Installer:_How_to_modify_an_existing_CD_image
