@@ -7,6 +7,7 @@ Generic changes
   * apt-get -y install scite
   * apt-get -y remove leafpad
 * Add custom settings to scite.
+* apt-get install deb-multimedia-keyring
 
 Specific changes
 =================
