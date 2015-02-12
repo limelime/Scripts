@@ -1,18 +1,18 @@
 Generic changes
 ================
-* apt-get -y install default-jdk
+* `apt-get -y install default-jdk`
 * Add custom .bashrc
-* Comment out deb-multimedia from /etc/apt/sources.list.
+* Comment out deb-multimedia from `/etc/apt/sources.list`.
 * Replace leafpad with scite.
-  * apt-get -y install scite
-  * apt-get -y remove leafpad
+  * `apt-get -y install scite`
+  * `apt-get -y remove leafpad`
 * Add custom settings to scite.
-* apt-get install deb-multimedia-keyring
+* `apt-get install deb-multimedia-keyring`
 
 Specific changes
 =================
 * Add proxy information in Firefox.
-* Add proxy information in /etc/apt/apt.conf.
+* Add proxy information in `/etc/apt/apt.conf`.
 
 
 
