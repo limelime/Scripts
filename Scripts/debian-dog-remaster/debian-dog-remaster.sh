@@ -1,5 +1,5 @@
 #!/bin/sh
-# Description: Create custom live Debian operating system. It will create an ISO.
+# Description: Create a custom live Debian operating system. It will create an ISO.
 #               The main idea is to replace the SQUASHFS file with a custom one.
 # Author: Xuan Ngo
 # Usage:
