@@ -17,6 +17,7 @@ Generic changes
   * `apt-get -y remove leafpad`
 * Add custom settings to scite.
 * `apt-get install deb-multimedia-keyring`
+* Change time zone: **Menu->System->Setup Timezone**
 
 Specific changes
 =================
