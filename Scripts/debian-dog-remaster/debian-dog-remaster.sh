@@ -26,7 +26,7 @@ OUTPUT_ISO=${OUTPUT_ISO_DIR}/cust-debdog-${DATE_STRING}.iso
 
 # Make ISO
 rm -f ${OUTPUT_ISO}
-genisoimage  -r -V "cust-debdog-iso" -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o ${OUTPUT_ISO} ${EXTRACTED_ISO_DIR}
+genisoimage  -r -V "cust-debdog" -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o ${OUTPUT_ISO} ${EXTRACTED_ISO_DIR}
 
 
 # Display info
