@@ -43,3 +43,8 @@ References
 Keyboard
 ========
 * http://unix.stackexchange.com/questions/7493/why-is-the-us-international-keyboard-layout-on-debian-different
+
+Dump
+====
+update-alternatives --config x-terminal-emulator
+export LANG=en_US.UTF8
