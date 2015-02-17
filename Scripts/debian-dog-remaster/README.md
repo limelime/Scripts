@@ -19,7 +19,7 @@ Generic changes
 * `apt-get -y install deb-multimedia-keyring`
 * Change time zone: **Menu->System->Setup Timezone**
 * `apt-get -y install geeqie`
-* `mkdir /mnt/usb` (370MB)
+* `mkdir /mnt/usb` (353MB)
 
 Specific changes
 =================
