@@ -21,7 +21,7 @@ Generic changes
 * `apt-get -y install geeqie`
 * `mkdir /mnt/usb` (353MB)
 * `setxkbmap us -variant alt-intl`
-  * ' + e = é.
+  * ' + e = é
   * Right-Alt-comma + c = ç
 
 Specific changes
