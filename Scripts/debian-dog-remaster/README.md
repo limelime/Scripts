@@ -20,15 +20,15 @@ Generic changes
 * Change time zone: **Menu->System->Setup Timezone**
 * `apt-get -y install geeqie`
 * `mkdir /mnt/usb` (353MB)
-* [Change keyboard layout to US International](http://openwritings.net/content/public/excerpt/change-keyboard-layout-us-international)
-  * **Menu->System->Set keyboard layout**
-  * **Generic 105-key (Intl) PC->US, internaltional with dead keys**
-  * Default values afterward.
+* `setxkbmap us -variant alt-intl`
+  * ' + e = é.
+  * Right-Alt-comma + c = ç
 
 Specific changes
 =================
-* Add proxy information in Firefox.
+* Add proxy information in **Firefox**.
 * Add proxy information in `/etc/apt/apt.conf`.
+* Add proxy information in `/etc/environment`.
 
 
 
@@ -39,3 +39,7 @@ References
 * http://murga-linux.com/puppy/viewtopic.php?p=773212#773212
 * http://murga-linux.com/puppy/viewtopic.php?p=773214#773214
 * http://murga-linux.com/puppy/viewtopic.php?p=774457#774457
+
+Keyboard
+========
+* http://unix.stackexchange.com/questions/7493/why-is-the-us-international-keyboard-layout-on-debian-different
