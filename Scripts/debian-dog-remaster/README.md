@@ -10,7 +10,7 @@ Change the following parameters accordingly:
 Generic changes
 ================
 * `apt-get -y install default-jdk`
-* Add custom .bashrc
+* Add custom `.bashrc`.
 * Comment out deb-multimedia from `/etc/apt/sources.list`.
 * Replace leafpad with scite.
   * `apt-get -y install scite`
