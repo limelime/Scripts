@@ -20,6 +20,7 @@ Generic changes
 * Change time zone: **Menu->System->Setup Timezone**
 * `apt-get -y install geeqie`
 * `mkdir /mnt/usb` (353MB)
+* [Change keyboard layout to US International](http://openwritings.net/content/public/excerpt/change-keyboard-layout-us-international)
 
 Specific changes
 =================
