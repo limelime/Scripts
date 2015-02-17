@@ -21,6 +21,9 @@ Generic changes
 * `apt-get -y install geeqie`
 * `mkdir /mnt/usb` (353MB)
 * [Change keyboard layout to US International](http://openwritings.net/content/public/excerpt/change-keyboard-layout-us-international)
+  * **Menu->System->Set keyboard layout**
+  * **Generic 105-key (Intl) PC->US, internaltional with dead keys**
+  * Default values afterward.
 
 Specific changes
 =================
