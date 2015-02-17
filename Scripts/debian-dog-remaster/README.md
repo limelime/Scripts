@@ -16,8 +16,10 @@ Generic changes
   * `apt-get -y install scite`
   * `apt-get -y remove leafpad`
 * Add custom settings to scite.
-* `apt-get install deb-multimedia-keyring`
+* `apt-get -y install deb-multimedia-keyring`
 * Change time zone: **Menu->System->Setup Timezone**
+* `apt-get -y install geeqie`
+* `mkdir /mnt/usb` (370MB)
 
 Specific changes
 =================
