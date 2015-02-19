@@ -23,6 +23,7 @@ Generic changes
 * `setxkbmap us -variant alt-intl`
   * ' + e = é
   * Right-Alt-comma + c = ç
+* Install [locale and Chinese fonts](http://openwritings.net/content/public/excerpt/make-chinese-characters-display-properly-iceweaselfirefox-and-console)
 
 Specific changes
 =================
