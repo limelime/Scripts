@@ -23,7 +23,7 @@ Generic changes
 * `setxkbmap us -variant alt-intl`
   * ' + e = é
   * Right-Alt-comma + c = ç
-* Install [locale and Chinese fonts](http://openwritings.net/content/public/excerpt/make-chinese-characters-display-properly-iceweaselfirefox-and-console)
+* Install [locale and Chinese fonts](http://openwritings.net/content/public/excerpt/make-chinese-characters-display-properly-iceweaselfirefox-and-console)(213MB).
 
 Specific changes
 =================
@@ -47,5 +47,5 @@ Keyboard
 
 Dump
 ====
-update-alternatives --config x-terminal-emulator
-export LANG=en_US.UTF8
+* update-alternatives --config x-terminal-emulator
+* export LANG=en_US.UTF8
