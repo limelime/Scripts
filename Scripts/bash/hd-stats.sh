@@ -5,6 +5,7 @@
 # Author: Xuan Ngo
 # Usage:
 #   ./hd-stats.sh
+# Note: sh hd-stats.sh gives error. Don't know why.
 #########################################################
 
 #### To handle line with spaces.
