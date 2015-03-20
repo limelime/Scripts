@@ -1,5 +1,5 @@
 #!/bin/bash
-# Description: Close current terminal and open a terminal and execute script
+# Description: Close current terminal and open a terminal.
 # Author: Xuan Ngo
 # Require: nohup, xfce4-terminal
 
