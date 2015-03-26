@@ -4,7 +4,7 @@
 # Require: nohup, xfce4-terminal
 
 # * Don't suffix command with '&'. Otherwise, command doesn't have time to complete
-#       before close this current terminal.
+#       before this current terminal closes.
 # * 2>/dev/null: Supress "nohup: ignoring input and appending output to `nohup.out'" 
 # * Adding -e COMMAND to xfce4-terminal doesn't work. Don't know why.
 nohup xfce4-terminal --geometry=190x21+0+0 2>/dev/null
