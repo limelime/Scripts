@@ -3,7 +3,7 @@
 #              Screenshots are saved in 01.png, 02.png, ..., 08.png
 # Author: Xuan Ngo
 # Usage: ./screenshots.sh <videofilename>
-# Requirements: mplayer, grep, sed
+# Requirements: mpv, grep, sed
 
 ### Global variables
 filename="$1"
@@ -24,7 +24,8 @@ NUM_OF_SCREENSHOTS=9
 # Get the total length of the video in seconds.
 #  Use mplayer to display the info of the video and then get the value of ID_LENGTH, the total number of seconds of the video.
 total_length=$(mplayer -identify -frames 0 -vc null -vo null -ao null ${filename} | grep ID_LENGTH | sed 's/ID_LENGTH=//' | sed 's/\..*//')
- 
+# Reference https://github.com/mpv-player/mpv/blob/master/TOOLS/mpv_identify.sh
+
 # Remove 4 seconds from the video so that it doesn't take screenshot at the ends.
 let total_length-=4
  
@@ -42,13 +43,13 @@ do
   padding=$(printf %03d ${i})
  
   # Take the screenshot.
-  #mplayer -nosound -ss ${time_at} -vf screenshot -frames 1 -vo png:z=9 ${filename}
-  mplayer -nosound -frames 2 -ss ${time_at} -vo png:z=9 ${filename}
+  #mplayer -loop 1 -nosound -frames 1 -ss ${time_at} -vo png:z=9 ${filename}
+  mpv --quiet --no-audio --vo=image --start=${time_at} --frames=1 ${filename}
  
   # Increment to the next time slice.
   let time_at+=${time_slice}
- 
-  # Move the screenshot 00000001.png to 0X.png
-  mv 00000001.png ${padding}.png
+
+  # Move the screenshot 00000001.jpg to 0X.jpg
+  mv 00000001.jpg ${padding}.jpg
 
 done
