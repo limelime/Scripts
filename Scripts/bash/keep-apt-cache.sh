@@ -6,6 +6,7 @@
 # $ cd /etc/init.d/
 # $ update-rc.d keep-apt-cache.sh start 20 0 6 .
 # http://www.linuxquestions.org/questions/debian-26/run-this-command-when-the-computer-shutdown-or-reboot-683851/
+# https://help.ubuntu.com/community/Repositories/Personal
 
 DEB_VERSION="$(lsb_release -si)-$(lsb_release -sr)-$(lsb_release -sc)"
 DEST_BASEDIR=/media/sf_shared/debian-apt-cache
