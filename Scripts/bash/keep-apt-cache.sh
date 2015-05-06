@@ -3,8 +3,9 @@
 # Make this script run at shutdown:
 # $ chmod +x keep-apt-cache.sh
 # $ cp keep-apt-cache.sh /etc/init.d/
-# $ cd /etc/rc0.d/
-# $ ln -s /etc/init.d/keep-apt-cache.sh K01keep-apt-cache
+# $ cd /etc/init.d/
+# $ update-rc.d keep-apt-cache.sh start 20 0 6 .
+# http://www.linuxquestions.org/questions/debian-26/run-this-command-when-the-computer-shutdown-or-reboot-683851/
 
 DEB_VERSION="$(lsb_release -si)-$(lsb_release -sr)-$(lsb_release -sc)"
 DEST_BASEDIR=/media/sf_shared/debian-apt-cache
