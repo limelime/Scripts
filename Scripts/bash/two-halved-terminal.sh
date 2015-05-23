@@ -1,6 +1,8 @@
 #!/bin/bash
 # Description: Open 2 terminal windows, one on top of each other and taking full width
 
+# http://unix.stackexchange.com/a/98493
+
 # http://stackoverflow.com/a/263900
 COLUMNS=$(tput cols)
 LINES=$(tput lines)
