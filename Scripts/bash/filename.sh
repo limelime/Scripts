@@ -18,7 +18,7 @@ echo "Full path = ${FULL_PATH}"
 echo "Filename  = ${FILENAME}"
 echo "Directory = ${DIR_OF_FILE}"
 echo "Don't process file extension. Otherwise, it will not be cross platform."
-echo "File type = $(file "${FULL_PATH}")"
+echo "File type = $(file -ib "${FULL_PATH}")"
 
 
 # Clean up.
