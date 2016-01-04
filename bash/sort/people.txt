@@ -1,5 +1,5 @@
 john; smith; 49
 amanda; bush; 55
 john; kidman; 55
-john; bush; 99
+john; bush; -9
 amanda; bush; 1
