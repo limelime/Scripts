@@ -13,9 +13,13 @@ touch "${TMP_DIR}/file-from-another-path.txt"
 ( 
   cd "${TMP_DIR}"; echo "List the other directory:"
   ls *
+  echo "" # Add newline.
 )
 
-echo ""
+
 
 echo "List current directory:"
 ls $0
+
+# Clean up
+rm -rf "${TMP_DIR}"
