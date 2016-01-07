@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-# Description: Execute script located on another path and return to the current working directory.
+# Description: Execute script located on another path without leaving the current working directory.
 #   Solution: Use subshell, i.e. ().
 
 
