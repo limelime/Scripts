@@ -13,7 +13,7 @@ function F_PRINT_COLOR_NUMBERS()
     COLOR_CODE=$(tput setaf 2) # green color.
   fi
   
-  RESET_COLOR=$(tput sgr0)
+  local RESET_COLOR=$(tput sgr0)
   printf "%22s: ${COLOR_CODE}%'6d${RESET_COLOR}\n" "${LABEL}" "${VALUE}"
 }
 
