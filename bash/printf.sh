@@ -34,8 +34,8 @@ echo ""
   printf "%10s: %11f\n" "${LABEL_GASOLINE}"  "${VALUE_GASOLINE}"  
 echo ""
 
-# Printf: Limit to 2 decimal digits. It also rounds up.
+# Printf: Limit to 2 decimal digits. Left and righ alignment. It also rounds up.
   printf "%10s: %'8.2f\n" "${LABEL_OIL}"       "${VALUE_OIL}"
-  printf "%10s: %'8.2f\n" "${LABEL_GASOLINE}"  "${VALUE_GASOLINE}"  
+  printf "%10s: %'-8.2f\n" "${LABEL_GASOLINE}"  "${VALUE_GASOLINE}"  
 echo ""    
  
