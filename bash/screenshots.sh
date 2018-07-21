@@ -1,7 +1,6 @@
 #!/bin/bash
 # Description: Automatically take 8 screenshots of a video using mplayer
 #              Screenshots are saved in 01.png, 02.png, ..., 08.png
-# Author: Xuan Ngo
 # Usage: ./screenshots.sh <videofilename> <# of screenshots>
 # Requirements: mpv, grep, sed
 # Reference: https://github.com/tkanmae/dotfiles/commit/51bd6d4e12eaebfe484e1d3c29f5fff3a44e6325
